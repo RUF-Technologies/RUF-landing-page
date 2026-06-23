@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RUF TECH — Software & Cibersegurança</title>
+<meta name="description" content="A RUF TECH desenvolve produtos digitais sob medida e monta a guarda em cima deles. Software com faro afiado e segurança com instinto de cão de guarda." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="RUF TECH — início">
+      <span class="brand-chip"><img src="assets/logo.png" alt="Logo RUF TECH" /></span>
+      <span class="brand-name">RUF <b>TECH</b></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a class="lk" href="#servicos">Serviços</a>
+      <a class="lk" href="#guarda">Cão de guarda</a>
+      <a class="lk" href="#processo">Como trabalhamos</a>
+      <a class="btn btn-primary" href="#contato">Falar com a gente <span class="arrow">→</span></a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Software · Cibersegurança</span>
+      <h1 class="hero-title">
+        Faro afiado pra <span class="accent">construir</span>.<br>
+        Instinto de guarda pra <span class="blue">proteger</span>.
+      </h1>
+      <p class="lead">
+        A RUF TECH desenvolve produtos digitais sob medida e monta a guarda em cima deles.
+        Código que entrega resultado — e um cão de guarda atento a cada porta, cada acesso, cada ameaça.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contato">Começar um projeto <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#servicos">Ver o que fazemos</a>
+      </div>
+      <div class="hero-stack">
+        <span>Vue.js</span><i>/</i><span>TypeScript</span><i>/</i><span>Pentest</span><i>/</i><span>Segurança de LLM</span>
+      </div>
+    </div>
+
+    <div class="sonar-wrap" aria-hidden="true">
+      <div class="status-chip sc1"><span class="dot"></span>deploy · ok</div>
+      <div class="status-chip warn sc2"><span class="dot"></span>phishing · bloqueado</div>
+      <div class="status-chip sc3"><span class="dot"></span>porta 443 · segura</div>
+      <div class="sonar">
+        <div class="grid-rings"></div>
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="ring r3"></div>
+        <div class="ring r4"></div>
+        <div class="sweep"></div>
+        <div class="blip b1"></div>
+        <div class="blip b2"></div>
+        <div class="blip b3"></div>
+        <div class="disc"><img src="assets/logo.png" alt="RUF TECH" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec svc" id="servicos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">O que a matilha faz</span>
+      <h2>Duas frentes, um só faro.</h2>
+      <p>Construímos software de verdade e cuidamos da segurança dele do mesmo jeito que um cão cuida do quintal: por perto, atento e sem moleza.</p>
+    </div>
+
+    <div class="domains">
+      <!-- DEV -->
+      <div class="domain dev">
+        <span class="domain-tag"><span class="ic"></span>Desenvolvimento</span>
+        <h3>Software sob medida</h3>
+        <p>Do protótipo ao deploy, com qualidade visível em cada commit.</p>
+
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#6FA8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div><h4>Web &amp; Apps</h4><p>Interfaces rápidas, acessíveis e escaláveis em Vue.js e TypeScript — pensadas pra durar.</p></div>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#6FA8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.7 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg></div>
+          <div><h4>Produtos do zero</h4><p>Da ideia ao MVP: arquitetura, UI e entrega contínua sem enrolação.</p></div>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#6FA8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6-6-6"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+          <div><h4>Integrações &amp; automações</h4><p>APIs, painéis e fluxos que tiram o trabalho repetitivo das suas costas.</p></div>
+        </div>
+      </div>
+
+      <!-- SEC -->
+      <div class="domain sec">
+        <span class="domain-tag"><span class="ic"></span>Cibersegurança</span>
+        <h3>Guarda em cima do código</h3>
+        <p>A gente fareja a brecha antes que o invasor encontre.</p>
+
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#FF8341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><h4>Pentest &amp; vulnerabilidades</h4><p>Encontramos a falha, explicamos o risco em português claro e entregamos o plano de correção.</p></div>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#FF8341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+          <div><h4>Engenharia social &amp; anti-phishing</h4><p>Simulações reais e treinamento do time pra reconhecer a isca antes da mordida.</p></div>
+        </div>
+        <div class="feat">
+          <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="#FF8341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <div><h4>Segurança de IA &amp; LLM</h4><p>Proteção contra prompt injection, vazamento de dados e abuso dos seus modelos e agentes.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WATCHDOG -->
+<section class="sec" id="guarda">
+  <div class="wrap watch-grid">
+    <div class="watch-copy">
+      <span class="eyebrow">O cão de guarda</span>
+      <div class="big">Enquanto você dorme,<br>alguém late.</div>
+      <p class="t">Monitoramento contínuo que observa, registra e avisa. Quando algo foge do padrão, você é o primeiro a saber — não o último.</p>
+      <div class="watch-points">
+        <div class="wp"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#3FD78A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Detecção de anomalias e acessos suspeitos em tempo real.</div>
+        <div class="wp"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#3FD78A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Alertas claros: o que aconteceu, onde e o que fazer agora.</div>
+        <div class="wp"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="#3FD78A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Relatórios periódicos sem juridiquês nem tecniquês.</div>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+        <span class="term-title">ruf-guard · monitor.log</span>
+        <span class="term-live"><span class="pulse"></span>ao vivo</span>
+      </div>
+      <div class="term-body" id="termBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec proc" id="processo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Como trabalhamos</span>
+      <h2>Farejar, construir, vigiar.</h2>
+      <p>Nada de processo enrolado. Três passos pra sair da ideia e chegar num produto que funciona e fica protegido.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">01 — FAREJAR</span>
+        <h3>Farejar</h3>
+        <p>Entendemos o problema de verdade, mapeamos riscos e oportunidades e alinhamos o que importa entregar primeiro.</p>
+      </div>
+      <div class="step">
+        <span class="num">02 — CONSTRUIR</span>
+        <h3>Construir</h3>
+        <p>Desenvolvemos em ciclos curtos e visíveis. Você acompanha a obra de perto, sem caixa-preta.</p>
+      </div>
+      <div class="step">
+        <span class="num">03 — VIGIAR</span>
+        <h3>Vigiar</h3>
+        <p>Entregamos, monitoramos e mantemos a guarda no ar. O cão fica de plantão depois do deploy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div class="cta-card">
+      <span class="eyebrow" style="justify-content:center;">Bora começar</span>
+      <h2>Bora colocar o faro pra trabalhar?</h2>
+      <p>Conta o teu desafio — software, segurança ou os dois. A gente responde rápido. Promessa de cachorro.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="mailto:contato@ruftech.com.br">Falar com a gente <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#servicos">Conhecer os serviços</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a href="#top" class="brand">
+        <span class="brand-chip" style="padding:6px 7px;"><img src="assets/logo.png" alt="RUF TECH" style="height:26px;" /></span>
+        <span class="brand-name">RUF <b>TECH</b></span>
+      </a>
+      <div class="foot-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#guarda">Cão de guarda</a>
+        <a href="#processo">Como trabalhamos</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+    <div class="foot-copy">
+      <span>© 2026 RUF TECH · Software &amp; Cibersegurança</span>
+      <span>Feito com faro afiado 🐾</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js" defer></script>
+
+</body>
+</html>
