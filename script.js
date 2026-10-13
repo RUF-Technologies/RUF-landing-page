@@ -40,3 +40,20 @@
   // semente inicial
   for (let k=0;k<8;k++) addLine();
   if (!reduce) setInterval(addLine, 2600);
+
+  // Vídeo de lançamento: botão de play próprio até o primeiro clique, depois os controles do navegador.
+  // Sem JavaScript, o vídeo já aparece com os controles nativos.
+  const screen = document.getElementById('launchScreen');
+  if (screen) {
+    const video = screen.querySelector('video');
+    const play = screen.querySelector('.play');
+    video.controls = false;
+    play.hidden = false;
+    play.addEventListener('click', () => {
+      play.hidden = true;
+      video.controls = true;
+      const p = video.play();
+      if (p && p.catch) p.catch(() => {});
+      video.focus();
+    });
+  }
