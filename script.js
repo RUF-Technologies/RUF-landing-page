@@ -57,3 +57,54 @@
       video.focus();
     });
   }
+
+
+// Formulário de contato (Web3Forms): envia sem recarregar a página.
+// Sem JavaScript, o formulário faz o envio normal via POST.
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  const status = document.getElementById('formStatus');
+  const submit = contactForm.querySelector('button[type="submit"]');
+  const label = submit.innerHTML;
+  const done = document.getElementById('formDone');
+  document.getElementById('formAgain').addEventListener('click', () => {
+    done.hidden = true;
+    contactForm.hidden = false;
+    contactForm.querySelector('input[name="name"]').focus();
+  });
+  // o hCaptcha (carregado pelo script da Web3Forms) cria esse campo ao ser resolvido
+  const resetCaptcha = () => { if (window.hcaptcha) window.hcaptcha.reset(); };
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.className = 'form-status';
+    status.textContent = '';
+    const captcha = contactForm.querySelector('[name="h-captcha-response"]');
+    if (!captcha || !captcha.value) {
+      status.classList.add('err');
+      status.textContent = 'Confirme que você não é um robô antes de enviar.';
+      return;
+    }
+    submit.textContent = 'Enviando…';
+    submit.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(contactForm),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) throw new Error(data.message);
+      contactForm.reset();
+      contactForm.hidden = true;
+      done.hidden = false;
+    } catch (err) {
+      status.classList.add('err');
+      status.textContent = 'Não foi possível enviar. Tente de novo ou use o e-mail ao lado.';
+    } finally {
+      // cada token do captcha vale para um único envio
+      resetCaptcha();
+      submit.innerHTML = label;
+      submit.disabled = false;
+    }
+  });
+}

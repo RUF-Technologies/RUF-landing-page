@@ -63,9 +63,6 @@
         <a class="btn btn-primary" href="#contato">Começar um projeto <span class="arrow">→</span></a>
         <a class="btn btn-ghost" href="#servicos">Ver o que fazemos</a>
       </div>
-      <div class="hero-stack">
-        <span>Vue.js</span><i>/</i><span>TypeScript</span><i>/</i><span>Pentest</span><i>/</i><span>Segurança de LLM</span><i>/</i><span>Vídeos curtos</span>
-      </div>
     </div>
 
     <div class="sonar-wrap" aria-hidden="true">
@@ -94,7 +91,7 @@
     <div class="sec-head">
       <span class="eyebrow">Lançamento</span>
       <h2>Chegamos latindo.</h2>
-      <p>Nosso filme de lançamento: 28 segundos sobre o que a RUF TECH faz pelo seu negócio. Dá o play com som.</p>
+      <p>28 segundos sobre o que a RUF TECH faz pelo seu negócio.</p>
     </div>
     <div class="screen" id="launchScreen">
       <video controls preload="none" playsinline poster="assets/lancamento-poster.jpg" aria-label="Vídeo de lançamento da RUF TECH">
@@ -107,7 +104,7 @@
       </button>
     </div>
     <div class="launch-note">
-      <span>Feito 100% em código: animação, trilha sonora e render.</span>
+      <span>Feito por nós: animação, trilha sonora e render.</span>
       <a href="#contato">Quer um vídeo assim pra sua marca? <span class="arrow">→</span></a>
     </div>
   </div>
@@ -252,12 +249,70 @@
 <section class="cta" id="contato">
   <div class="wrap">
     <div class="cta-card">
-      <span class="eyebrow" style="justify-content:center;">Bora começar</span>
-      <h2>Bora colocar o faro pra trabalhar?</h2>
-      <p>Conta o teu desafio — software, segurança, vídeo ou tudo junto. A gente responde rápido. Promessa de cachorro.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="mailto:contatoruftech@gmail.com">Falar com a gente <span class="arrow">→</span></a>
-        <a class="btn btn-ghost" href="#servicos">Conhecer os serviços</a>
+      <div class="cta-copy">
+        <span class="eyebrow">Bora começar</span>
+        <h2>Bora colocar o faro pra trabalhar?</h2>
+        <p>Nos conte sua dor — Software? Segurança? Vídeo? ou tudo junto? A gente responde rápido. Promessa de cachorro.</p>
+        <div class="watch-points">
+          <div class="wp"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Resposta em até 1 dia útil, direto de quem vai fazer.</div>
+          <div class="wp"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Primeira conversa sem custo e sem compromisso.</div>
+          <div class="wp"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Seus dados ficam só com a gente. Nada de spam.</div>
+        </div>
+        <p class="cta-alt">Prefere e-mail? <a href="mailto:contatoruftech@gmail.com">contatoruftech@gmail.com</a></p>
+      </div>
+
+      <div class="form-panel">
+        <div class="term-bar">
+          <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+          <span class="term-title">ruf-tech · nova-mensagem</span>
+          <span class="term-live"><span class="pulse"></span>online</span>
+        </div>
+
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="dcc908c6-97a5-4e4c-a4e3-99bd78042756">
+          <input type="hidden" name="subject" value="Novo contato pelo site da RUF TECH">
+          <input type="hidden" name="from_name" value="Site RUF TECH">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <fieldset class="field">
+            <legend>Do que você precisa?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="interesse" value="Software" checked><span>Software</span></label>
+              <label class="chip"><input type="radio" name="interesse" value="Cibersegurança"><span>Segurança</span></label>
+              <label class="chip"><input type="radio" name="interesse" value="Vídeo"><span>Vídeo</span></label>
+              <label class="chip"><input type="radio" name="interesse" value="Tudo junto"><span>Tudo junto</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field-row">
+            <label class="field">
+              <span class="lbl">Nome</span>
+              <input type="text" name="name" placeholder="Como podemos te chamar?" required autocomplete="name">
+            </label>
+            <label class="field">
+              <span class="lbl">E-mail</span>
+              <input type="email" name="email" placeholder="voce@empresa.com" required autocomplete="email">
+            </label>
+          </div>
+          <label class="field">
+            <span class="lbl">Mensagem</span>
+            <textarea name="message" rows="4" placeholder="Conte o cenário, o prazo e o que te tira o sono." required></textarea>
+          </label>
+
+          <div class="captcha">
+            <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="pt"></div>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit">Enviar mensagem <span class="arrow">→</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="form-done" id="formDone" hidden>
+          <span class="done-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+          <h3>Mensagem recebida.</h3>
+          <p>O faro já está no rastro. A gente responde no seu e-mail em breve.</p>
+          <button class="btn btn-ghost" type="button" id="formAgain">Enviar outra</button>
+        </div>
       </div>
     </div>
   </div>
@@ -284,6 +339,7 @@
     </div>
   </div>
 </footer>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script src="script.js" defer></script>
 
 </body>

@@ -373,18 +373,102 @@
   /* ---------- CTA ---------- */
   .cta{padding:88px 0;}
   .cta-card{
-    position:relative;overflow:hidden;border-radius:26px;padding:60px 50px;
+    position:relative;overflow:hidden;border-radius:26px;padding:56px;
     background:linear-gradient(120deg,#1E1F23,#18191C);
-    border:1px solid var(--line);text-align:center;
+    border:1px solid var(--line);
+    display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;
   }
   .cta-card::before{
-    content:"";position:absolute;inset:0;z-index:0;
-    background:radial-gradient(600px 280px at 50% -10%, rgba(217,160,48,.2), transparent 60%);
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(560px 300px at 0% 0%, rgba(217,160,48,.16), transparent 62%),
+      radial-gradient(520px 320px at 100% 100%, rgba(201,204,209,.06), transparent 60%);
   }
   .cta-card > *{position:relative;z-index:1;}
-  .cta-card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,4.4vw,3.1rem);letter-spacing:-.02em;margin:0;line-height:1.05;}
-  .cta-card p{color:var(--mist);margin:18px auto 0;max-width:30em;font-size:1.06rem;}
-  .cta-card .hero-cta{justify-content:center;margin-top:34px;}
+  .cta-card h2{font-family:var(--font-display);font-weight:800;font-size:clamp(2rem,4vw,2.9rem);letter-spacing:-.02em;margin:18px 0 0;line-height:1.05;}
+  .cta-copy > p{color:var(--mist);margin:18px 0 0;max-width:30em;font-size:1.05rem;}
+  .cta-copy .watch-points{margin-top:28px;}
+  .cta-alt{margin:30px 0 0;padding-top:20px;border-top:1px solid var(--line-soft);font-size:.9rem;color:var(--mist-2);}
+  .cta-alt a{color:var(--gold-text);font-weight:600;}
+  .cta-alt a:hover{color:var(--gold-hi);}
+
+  /* formulário em painel, no mesmo idioma do terminal do cão de guarda */
+  .form-panel{
+    position:relative;background:#0F1012;border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    box-shadow:0 0 0 1px rgba(217,160,48,.14), 0 34px 80px -34px rgba(0,0,0,.95), 0 0 90px -40px rgba(217,160,48,.35);
+  }
+  .form-panel::before{
+    content:"";position:absolute;left:0;right:0;top:0;height:1px;z-index:2;
+    background:linear-gradient(90deg,transparent,rgba(242,196,90,.7),transparent);
+  }
+
+  .contact-form{display:grid;gap:20px;padding:26px 26px 22px;}
+  .contact-form[hidden]{display:none;}
+  .contact-form .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .contact-form .field{display:grid;gap:8px;margin:0;padding:0;border:0;min-width:0;}
+  .contact-form .lbl,.contact-form legend{
+    font-family:var(--font-mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist-2);padding:0;
+  }
+  .contact-form legend{margin-bottom:10px;}
+  .contact-form input[type=text],.contact-form input[type=email],.contact-form textarea{
+    width:100%;font:inherit;font-size:.96rem;color:var(--text);
+    background:var(--coal-2);border:1px solid var(--line);border-radius:11px;padding:13px 15px;
+    resize:vertical;min-height:48px;
+    transition:border-color .2s, box-shadow .2s, background .2s;
+  }
+  .contact-form textarea{min-height:120px;line-height:1.55;}
+  .contact-form ::placeholder{color:var(--mist-2);opacity:.75;}
+  .contact-form input:hover,.contact-form textarea:hover{border-color:#3A3D44;}
+  .contact-form input:focus,.contact-form textarea:focus{
+    outline:none;background:var(--coal-3);border-color:rgba(217,160,48,.7);
+    box-shadow:0 0 0 4px rgba(217,160,48,.12);
+  }
+  .contact-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{position:relative;cursor:pointer;}
+  .chip input{position:absolute;opacity:0;pointer-events:none;}
+  .chip span{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+    font-size:.86rem;font-weight:500;color:var(--mist);
+    border:1px solid var(--line);background:rgba(201,204,209,.03);
+    transition:color .2s, border-color .2s, background .2s;
+  }
+  .chip span::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--line);transition:background .2s, box-shadow .2s;}
+  .chip:hover span{color:#fff;border-color:var(--silver-2);}
+  .chip input:checked + span{color:var(--gold-hi);border-color:rgba(217,160,48,.55);background:rgba(217,160,48,.10);}
+  .chip input:checked + span::before{background:var(--gold);box-shadow:0 0 8px rgba(217,160,48,.8);}
+  .chip input:focus-visible + span{outline:2px solid var(--gold-hi);outline-offset:3px;}
+
+  .captcha{display:flex;justify-content:center;min-height:78px;}
+  .captcha iframe{border-radius:8px;}
+
+  .btn-block{width:100%;justify-content:center;padding:14px 20px;font-size:.96rem;margin-top:4px;}
+  .contact-form .btn[disabled]{opacity:.65;cursor:wait;transform:none;}
+  .form-status{margin:-6px 0 0;min-height:1.3em;text-align:center;font-family:var(--font-mono);font-size:.76rem;color:var(--mist-2);}
+  .form-status.err{color:#FF8A7A;}
+
+  .form-done{padding:56px 30px 50px;text-align:center;animation:fadein .4s forwards;}
+  .form-done[hidden]{display:none;}
+  .done-ic{
+    width:62px;height:62px;margin:0 auto;border-radius:50%;display:grid;place-items:center;color:var(--coal);
+    background:var(--metal-gold);
+    box-shadow:0 14px 34px -12px rgba(217,160,48,.8), 0 0 0 9px rgba(217,160,48,.14), inset 0 1px 0 rgba(255,244,214,.6);
+  }
+  .done-ic svg{width:28px;height:28px;}
+  .form-done h3{font-family:var(--font-display);font-weight:700;font-size:1.5rem;margin:24px 0 8px;}
+  .form-done p{color:var(--mist);margin:0 auto 26px;max-width:24em;}
+
+  @media (max-width:920px){
+    .cta-card{grid-template-columns:1fr;gap:40px;padding:44px 34px;}
+  }
+  @media (max-width:520px){
+    .cta{padding:64px 0;}
+    .cta-card{padding:34px 18px 18px;border-radius:20px;}
+    .contact-form{padding:22px 18px 18px;}
+    .contact-form .field-row{grid-template-columns:1fr;}
+    .form-panel .term-title{display:none;}
+  }
 
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--line);padding:46px 0 40px;background:var(--coal);}
@@ -422,7 +506,6 @@
     .screen{border-radius:12px;margin-top:34px;}
     .play-disc{width:72px;height:72px;}
     .play-disc svg{width:26px;height:26px;}
-    .cta-card{padding:42px 24px;}
     .status-chip{font-size:.64rem;padding:6px 9px;}
     .sc1{left:0;}.sc2{right:0;}.sc3{left:2%;}
   }
